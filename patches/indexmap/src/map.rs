@@ -39,7 +39,7 @@ use core::mem;
 use core::ops::{Index, IndexMut, RangeBounds};
 
 #[cfg(feature = "std")]
-use std::hash::RandomState;
+use std::collections::hash_map::RandomState;
 
 use crate::inner::Core;
 use crate::util::{third, try_simplify_range};

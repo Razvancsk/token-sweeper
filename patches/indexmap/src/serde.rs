@@ -24,7 +24,7 @@ pub(crate) fn cautious_capacity<K, V>(hint: Option<usize>) -> usize {
 
     Ord::min(
         hint.unwrap_or(0),
-        MAX_PREALLOC_BYTES / size_of::<Bucket<K, V>>(),
+        MAX_PREALLOC_BYTES / std::mem::size_of::<Bucket<K, V>>(),
     )
 }
 
