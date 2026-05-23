@@ -16,6 +16,8 @@ codegen-units = 1
 [patch.crates-io]
 blake3 = { path = "patches/blake3" }
 block-buffer = { path = "patches/block-buffer" }
+borsh = { path = "patches/borsh" }
+borsh-derive = { path = "patches/borsh-derive" }
 cmov = { path = "patches/cmov" }
 constant_time_eq = { path = "patches/constant_time_eq" }
 cpufeatures = { path = "patches/cpufeatures" }
@@ -25,4 +27,14 @@ digest = { path = "patches/digest" }
 hashbrown = { path = "patches/hashbrown" }
 hybrid-array = { path = "patches/hybrid-array" }
 indexmap = { path = "patches/indexmap" }
+js-sys = { path = "patches/js-sys" }
+rayon = { path = "patches/rayon" }
+rayon-core = { path = "patches/rayon-core" }
+unicode-segmentation = { path = "patches/unicode-segmentation" }
+wasip2 = { path = "patches/wasip2" }
+wasm-bindgen = { path = "patches/wasm-bindgen" }
+wasm-bindgen-macro = { path = "patches/wasm-bindgen-macro" }
+wasm-bindgen-macro-support = { path = "patches/wasm-bindgen-macro-support" }
+wasm-bindgen-shared = { path = "patches/wasm-bindgen-shared" }
+web-sys = { path = "patches/web-sys" }
 wit-bindgen = { path = "patches/wit-bindgen" }

@@ -11,7 +11,6 @@
 
 [package]
 edition = "2021"
-rust-version = "1.85"
 name = "cpufeatures"
 version = "0.3.0"
 authors = ["RustCrypto Developers"]
