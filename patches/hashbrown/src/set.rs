@@ -2505,7 +2505,7 @@ impl<'a, T, S, A: Allocator> VacantEntry<'a, T, S, A> {
     }
 }
 
-#[expect(dead_code)]
+#[allow(dead_code)]
 fn assert_covariance() {
     fn set<'new>(v: HashSet<&'static str>) -> HashSet<&'new str> {
         v
@@ -2894,7 +2894,7 @@ mod test_set {
         use core::hash;
 
         #[derive(Debug)]
-        #[expect(dead_code)]
+        #[allow(dead_code)]
         struct Foo(&'static str, i32);
 
         impl PartialEq for Foo {

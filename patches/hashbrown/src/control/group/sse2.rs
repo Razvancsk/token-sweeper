@@ -20,7 +20,7 @@ pub(crate) const BITMASK_ITER_MASK: BitMaskWord = !0;
 pub(crate) struct Group(x86::__m128i);
 
 // FIXME: https://github.com/rust-lang/rust-clippy/issues/3859
-#[expect(clippy::use_self)]
+#[allow(clippy::use_self)]
 impl Group {
     /// Number of bytes in the group.
     pub(crate) const WIDTH: usize = mem::size_of::<Self>();
@@ -71,7 +71,7 @@ impl Group {
     /// the given value.
     #[inline]
     pub(crate) fn match_tag(self, tag: Tag) -> BitMask {
-        #[expect(
+        #[allow(
             clippy::cast_possible_wrap, // tag.0: Tag as i8
             // tag: i32 as u16
             //   note: _mm_movemask_epi8 returns a 16-bit mask in a i32, the
@@ -96,7 +96,7 @@ impl Group {
     /// `EMPTY` or `DELETED`.
     #[inline]
     pub(crate) fn match_empty_or_deleted(self) -> BitMask {
-        #[expect(
+        #[allow(
             // tag: i32 as u16
             //   note: _mm_movemask_epi8 returns a 16-bit mask in a i32, the
             //   upper 16-bits of the i32 are zeroed:
@@ -128,7 +128,7 @@ impl Group {
         //   let special = 0 > tag = 1111_1111 (true) or 0000_0000 (false)
         //   1111_1111 | 1000_0000 = 1111_1111
         //   0000_0000 | 1000_0000 = 1000_0000
-        #[expect(
+        #[allow(
             clippy::cast_possible_wrap, // tag: Tag::DELETED.0 as i8
         )]
         unsafe {

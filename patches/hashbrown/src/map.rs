@@ -5024,7 +5024,7 @@ where
     }
 }
 
-#[expect(dead_code)]
+#[allow(dead_code)]
 fn assert_covariance() {
     fn map_key<'new>(v: HashMap<&'static str, u8>) -> HashMap<&'new str, u8> {
         v

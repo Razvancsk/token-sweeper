@@ -15,7 +15,7 @@ pub(crate) const BITMASK_ITER_MASK: BitMaskWord = 0x8080_8080_8080_8080;
 #[derive(Copy, Clone)]
 pub(crate) struct Group(neon::uint8x8_t);
 
-#[expect(clippy::use_self)]
+#[allow(clippy::use_self)]
 impl Group {
     /// Number of bytes in the group.
     pub(crate) const WIDTH: usize = mem::size_of::<Self>();
