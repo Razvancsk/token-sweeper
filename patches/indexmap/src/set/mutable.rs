@@ -17,7 +17,7 @@ use crate::map::MutableKeys;
 /// `use` this trait to enable its methods for `IndexSet`.
 ///
 /// This trait is sealed and cannot be implemented for types outside this crate.
-#[expect(private_bounds)]
+#[allow(private_bounds)]
 pub trait MutableValues: Sealed {
     type Value;
 

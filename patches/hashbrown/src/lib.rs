@@ -186,4 +186,3 @@ impl core::fmt::Display for TryReserveError {
     }
 }
 
-impl core::error::Error for TryReserveError {}

@@ -19,7 +19,7 @@ use core::mem;
 /// Opt-in access to the experimental raw entry API.
 ///
 /// See the [`raw_entry_v1`][self] module documentation for more information.
-#[expect(private_bounds)]
+#[allow(private_bounds)]
 pub trait RawEntryApiV1<K, V, S>: Sealed {
     /// Creates a raw immutable entry builder for the [`IndexMap`].
     ///

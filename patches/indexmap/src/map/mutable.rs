@@ -18,7 +18,7 @@ use super::{
 /// `use` this trait to enable its methods for `IndexMap`.
 ///
 /// This trait is sealed and cannot be implemented for types outside this crate.
-#[expect(private_bounds)]
+#[allow(private_bounds)]
 pub trait MutableKeys: Sealed {
     type Key;
     type Value;
@@ -104,7 +104,7 @@ where
 /// `use` this trait to enable its methods for `Entry`.
 ///
 /// This trait is sealed and cannot be implemented for types outside this crate.
-#[expect(private_bounds)]
+#[allow(private_bounds)]
 pub trait MutableEntryKey: Sealed {
     type Key;
 

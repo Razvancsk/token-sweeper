@@ -253,7 +253,6 @@ impl core::fmt::Display for TryReserveError {
     }
 }
 
-impl core::error::Error for TryReserveError {}
 
 // NOTE: This is copied from the slice module in the std lib.
 /// The error type returned by [`get_disjoint_indices_mut`][`IndexMap::get_disjoint_indices_mut`].
@@ -281,4 +280,3 @@ impl core::fmt::Display for GetDisjointMutError {
     }
 }
 
-impl core::error::Error for GetDisjointMutError {}
