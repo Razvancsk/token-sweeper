@@ -160,8 +160,8 @@ pub unsafe fn sysctlbyname(name: &[u8]) -> bool {
     let rc = unsafe {
         libc::sysctlbyname(
             name.as_ptr().cast::<i8>(),
-            (&raw mut value).cast::<libc::c_void>(),
-            &raw mut size,
+            core::ptr::addr_of_mut!(value) as *mut libc::c_void,
+            core::ptr::addr_of_mut!(size),
             core::ptr::null_mut(),
             0,
         )

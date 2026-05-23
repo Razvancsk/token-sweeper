@@ -324,7 +324,7 @@ impl Cmov for cmp::Ordering {
         // a value which was originally a valid `Ordering` then cast to `i8`
         #[allow(trivial_casts, unsafe_code)]
         unsafe {
-            *self = *(&raw const n).cast::<Self>();
+            *self = *(core::ptr::addr_of!(n) as *const Self);
         }
     }
 }

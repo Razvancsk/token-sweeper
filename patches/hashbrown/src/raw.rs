@@ -1461,7 +1461,7 @@ impl<T, A: Allocator> RawTable<T, A> {
             Some((
                 unsafe { NonNull::new_unchecked(self.table.ctrl.as_ptr().sub(ctrl_offset).cast()) },
                 layout,
-                unsafe { ptr::read(&raw const self.alloc) },
+                unsafe { ptr::read(core::ptr::addr_of!(self.alloc)) },
             ))
         };
         mem::forget(self);
@@ -4146,7 +4146,7 @@ impl<T, A: Allocator> Drop for RawDrain<'_, T, A> {
             // Move the now empty table back to its original location.
             self.orig_table
                 .as_ptr()
-                .copy_from_nonoverlapping(&raw const self.table, 1);
+                .copy_from_nonoverlapping(core::ptr::addr_of!(self.table), 1);
         }
     }
 }
